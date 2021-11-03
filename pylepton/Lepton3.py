@@ -57,7 +57,7 @@ class Lepton3(Lepton):
     while (self._capture_buf[20, 0] & 0x00F0) != 0x10: # are we at segment 1 yet?
       # print "Not at start ({0})!".format(self._capture_buf[20, 0] & 0x00F0)
       if (self._capture_buf[20, 0] & 0xFF0F) != 0x1400: # make sure that this is a well-formed frame, should find line 20 here
-        print "Garbage frame number resetting..."
+        print("Garbage frame number resetting...")
         time.sleep(0.185)
       start = time.time()
       Lepton.capture_segment(self._handle, self._xmit_buf[:self._msg_size * Lepton.ROWS], self._msg_size, self._capture_buf[0])
