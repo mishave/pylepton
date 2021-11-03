@@ -1,5 +1,5 @@
 # pylepton
-Updated main branch to include lepton3-dev chnages
+###Updated main branch to include lepton3-dev chnages
 
 Quick and dirty pure python library for capturing images from the Lepton over SPI (for example, on a Raspberry PI).
 
@@ -8,18 +8,20 @@ Requires `cv2` and `numpy` modules, if you don't have them already. On a Debian-
     $ sudo apt-get install python-opencv python-numpy
     
 ## to install:
-Clone repo
+Clone repo -
     $ git clone git@github.com:mishave/pylepton.git
-increase the size of the SPI buffer
+    
+Increase the size of the SPI buffer -
     $ sudo nano /boot/cmdline.txt
     
-    and add the following to the end of the text:
-    `spidev.bufsiz= 65535`
-reboot
+Add the following to the end of cmdline.txt -
+    `spidev.bufsiz=65535`
+    
+reboot-
     $ sudo reboot
     
-This can be checked by running the following command:
-cat /sys/module/spidev/parameters/bufsiz
+After reboot, confirm buffer size has been increased - 
+    $ cat /sys/module/spidev/parameters/bufsiz
 
 
 You can run the examples in the working directory, but a distutils setup is included to install into site-packages for distribution:
