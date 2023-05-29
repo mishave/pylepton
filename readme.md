@@ -27,6 +27,9 @@ After reboot, confirm buffer size has been increased -
 You can run the examples in the working directory, but a distutils setup is included to install into site-packages for distribution:
 
     $ sudo python setup.py install
+
+    ## python setup.py install --user
+            ^updated method
     
  
 
